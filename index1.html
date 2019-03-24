@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    /*Задание1 
+    Разработайте страницу "текстовый редактор". На страницу 
+    должно быть размещено поле ввода и кнопка сохранить(факти
+    ческого сохранения данных из поля ввода делать не надо)
+    Если пользователь пытается закрыть окно браузера не"сохранив"
+    данные в поле ввода должно запкускаться окно которое потребует
+    подтверждение операции закрытия окна. index1 
+    
+    Задание2
+    Создайте страницу с нескольскими блоками текста. Реализуйте
+    обработчики собыйтий таким образом, чтобы при нажатии на 
+    кнопку r - текст становился красного цвета
+           g - зеленым
+           a b - синим.
+    
+    Задание3
+    Сделайте кнопку с надписью "получить скиндку".При наведении
+    кнопка должна убегать от курсора не давая пользователю
+    нажать на себя
+    
+    Задание4
+    Разработайте страницу которая будет выводить сообщение
+    "Сохранено" при нажатии на клавиши Ctrl+S "выбрано всё"
+    при нажатии Ctrl + A и "сохранено всё" при нажатии на комбинацию
+    Ctrl+Shift+S*/
+    </script>
+    <style>
+        body{
+            margin: 0 auto;
+        }
+        .wrapper{
+            margin-top: 500px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        span{
+            color: green;
+            display: none;
+        }
+    </style>
+    <script>
+        var flag = false;
+
+        window.onload = function(){
+        var save =  document.getElementById("saveBtn");
+        var saveMes = document.getElementById("saveMes")
+
+        save.addEventListener('click', function(){
+
+            saveMes.style.display = "block";
+            flag = true;
+
+          })
+        };
+        window.onbeforeunload = function () {
+        var input = document.getElementById("input").value;   
+
+             if(flag == false && input.length != 0 ){
+                return "Вы уверены, что хотите закрыть окно?";
+             }
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <form>
+            <input type="text" id="input">
+            <input type="button" value="Save" id="saveBtn">
+            <span id="saveMes">Saved!</span>
+        </form>
+    </div>
+</body>
+</html>

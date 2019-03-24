@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    /*    Задание2
+    Создайте страницу с нескольскими блоками текста. Реализуйте
+    обработчики собыйтий таким образом, чтобы при нажатии на 
+    кнопку r - текст становился красного цвета
+           g - зеленым
+           a b - синим.*/
+    </script>
+    <script>
+        window.onload = function(){
+           var main = document.getElementById("main");
+           var par = document.getElementsByClassName("par");
+           main.onkeypress = function (e){
+        
+                if(e.charCode == "114"){
+                    for(var i = 0; i < par.length; i++){
+                        par[i].style.color = "red";
+                    }
+                }
+                if(e.charCode == "103"){
+                    for(var i = 0; i < par.length; i++){
+                        par[i].style.color = "green";
+                    }
+                }
+                if(e.charCode == "97" || e.charCode == "98"){
+                    for(var i = 0; i < par.length; i++){
+                        par[i].style.color = "blue";
+                    }
+                }
+           }
+        }
+    </script>
+</head>
+<body id="main">
+    <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat a eum ullam beatae placeat adipisci magni maxime aliquid dolor fugit iusto, quis esse nemo perspiciatis aut eveniet, pariatur architecto. Dicta.</p>
+    <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta consequatur cum eos eius dolorum, aliquam itaque sed earum ducimus vitae vel beatae, necessitatibus praesentium doloribus dolor rerum sapiente cupiditate autem!</p>
+    <p class="par">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat magni et eum sunt in maxime assumenda saepe quis, praesentium excepturi nostrum itaque magnam suscipit voluptatum ea quibusdam placeat. Et, quia?</p>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    /*Задание4
+    Разработайте страницу которая будет выводить сообщение
+    "Сохранено" при нажатии на клавиши Ctrl+S "выбрано всё"
+    при нажатии Ctrl + A и "сохранено всё" при нажатии на комбинацию
+    Ctrl+Shift+S*/
+    </script>
+    <style>
+        span{
+            display: none;
+            color: green;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var main = document.getElementById("main");
+            var save = document.getElementById("save");
+            var choice = document.getElementById("choice");
+            var allSave = document.getElementById("allSave");
+            main.onkeypress = function(e){
+                if(e.ctrlKey == true && e.charCode == "115"){
+                    save.style.display = "block";
+                }
+                if(e.ctrlKey == true && e.charCode == "97"){
+                    choice.style.display = "block";
+                }
+                if(e.ctrlKey == true && e.shiftKey == true &&
+                 e.charCode == "98"){
+                    allSave.style.display = "block";
+                }
+            }
+        }
+    </script>
+</head>
+<body id="main">
+    <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quasi perspiciatis ipsa recusandae reiciendis eaque veniam quas quod animi molestias omnis, perferendis tempore necessitatibus culpa minus quam nulla qui voluptate.
+    Amet praesentium, doloremque a libero nobis itaque, sed obcaecati, deserunt non numquam in sunt nemo distinctio voluptatum. Temporibus rem libero facilis, facere minima beatae, ad repellendus asperiores quos deleniti omnis!
+    Sint optio, facere expedita officia voluptatem omnis nobis totam fuga dolorum provident, quae odit quis dicta in excepturi quasi esse! Rem tenetur non numquam officiis sed debitis dolor, a quas.
+    Voluptates non a qui quidem accusantium, et ducimus pariatur nam debitis saepe mollitia, numquam perferendis repellendus enim excepturi minima reiciendis odit quo aperiam, incidunt consequatur. Magnam architecto magni doloribus quas.
+    Voluptatibus vel et voluptate asperiores a, voluptatem accusantium nemo, assumenda error necessitatibus doloribus cumque dolorum deleniti suscipit pariatur voluptatum at esse cupiditate nam laudantium. Distinctio eum facere molestias atque? Veniam!
+    Vel doloremque magnam nesciunt labore explicabo, dolore deserunt error nemo quis repudiandae! Deserunt exercitationem quam dolorem laborum, error quia maiores porro voluptatibus hic aut quae ullam sapiente eos ut animi?
+    Natus, adipisci error? Beatae, aspernatur! Odio sequi sed facilis sint vero! Veritatis repellendus nobis, accusantium molestias, laborum voluptates quae quas tenetur, facere eaque provident quis delectus voluptas maiores vitae corporis.
+    Accusantium, magni! Totam, nihil obcaecati libero harum labore magni ad soluta maxime expedita explicabo provident fugit consequuntur, veritatis deleniti ut! Eos, adipisci repellendus inventore beatae laudantium veritatis perspiciatis quam qui.
+    Minima quisquam exercitationem dicta, tempora repudiandae impedit sit dolore perferendis sed. Perferendis esse inventore consequatur laudantium dolorem enim fuga repellendus vel qui excepturi, alias voluptates, aliquid iusto quaerat fugiat obcaecati!
+    Explicabo qui nisi deserunt omnis debitis sed sit facilis nulla accusamus mollitia officiis esse, iste ab nemo maxime eligendi. Debitis earum distinctio reprehenderit est natus maxime sit ex necessitatibus odit.
+</p>
+<span id="save">Сохранено</span>
+<span id="choice">Выбрано Всё</span>
+<span id="allSave">Сохранено Всё</span>
+</body>
+</html>

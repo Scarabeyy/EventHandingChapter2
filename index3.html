@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    /*Задание3
+    Сделайте кнопку с надписью "получить скиндку".При наведении
+    кнопка должна убегать от курсора не давая пользователю
+    нажать на себя*/
+    </script>
+    <style>
+        div{
+            background-color: lightcoral;
+            position: absolute;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+         var runner = document.getElementById("runner");
+
+         function getRandomInRange(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+         runner.onmouseover = function(){
+             runner.style.left = getRandomInRange(1,500) +"px";
+             runner.style.top = getRandomInRange(1,500) +"px";
+         }
+        }
+    </script>
+</head>
+<body>
+    <div id="runner">
+        <span>Скидка!</span>
+    </div>
+</body>
+</html>
